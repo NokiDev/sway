@@ -21,6 +21,8 @@ enum ipc_command_type {
 	IPC_GET_INPUTS = 100,
 	IPC_GET_SEATS = 101,
 
+	IPC_IS_FULLSCREEN = 102,
+
 	// Events sent from sway to clients. Events have the highest bits set.
 	IPC_EVENT_WORKSPACE = ((1<<31) | 0),
 	IPC_EVENT_OUTPUT = ((1<<31) | 1),
