@@ -389,8 +389,6 @@ int main(int argc, char **argv) {
 		type = IPC_COMMAND;
 	} else if (strcasecmp(cmdtype, "get_workspaces") == 0) {
 		type = IPC_GET_WORKSPACES;
-	} else if (strcasecmp(cmdtype, "is_fullscreen") == 0) {
-        type = IPC_IS_FULLSCREEN; 
     } else if (strcasecmp(cmdtype, "get_seats") == 0) {
 		type = IPC_GET_SEATS;
 	} else if (strcasecmp(cmdtype, "get_inputs") == 0) {

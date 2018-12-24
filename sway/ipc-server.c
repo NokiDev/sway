@@ -835,23 +835,7 @@ void ipc_client_handle_command(struct ipc_client *client) {
 		json_object_put(json); // free
 		goto exit_cleanup;
     }
-
-	case IPC_IS_FULLSCREEN:
-	{
-		json_object *json = json_object_new_object();
-		struct sway_container *container = config->handler_context.container;
-		if(container != NULL && container->is_fullscreen) {
-			json_object_object_add(json, "fullscreen", json_object_new_string("true"));
-		}
-		else {
-			json_object_object_add(json, "fullscreen", json_object_new_string("false"));
-		}
-		const char *json_string = json_object_to_json_string(json);
-		client_valid =
-			ipc_send_reply(client, json_string, (uint32_t)strlen(json_string));
-		json_object_put(json); // free
-		goto exit_cleanup;
-	}
+	
 	default:
 		wlr_log(WLR_INFO, "Unknown IPC command type %i", client->current_command);
 		goto exit_cleanup;
