@@ -389,7 +389,7 @@ int main(int argc, char **argv) {
 		type = IPC_COMMAND;
 	} else if (strcasecmp(cmdtype, "get_workspaces") == 0) {
 		type = IPC_GET_WORKSPACES;
-    } else if (strcasecmp(cmdtype, "get_seats") == 0) {
+        } else if (strcasecmp(cmdtype, "get_seats") == 0) {
 		type = IPC_GET_SEATS;
 	} else if (strcasecmp(cmdtype, "get_inputs") == 0) {
 		type = IPC_GET_INPUTS;
