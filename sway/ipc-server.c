@@ -860,7 +860,7 @@ bool ipc_send_reply(struct ipc_client *client, const char *payload, uint32_t pay
 	memcpy(&data32[1], &client->current_command, sizeof(client->current_command));
 
 	while (client->write_buffer_len + ipc_header_size + payload_length >=
-						client->write_buffer_size) {
+							client->write_buffer_size) {
 		client->write_buffer_size *= 2;
 	}
 
